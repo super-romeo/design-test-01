@@ -148,4 +148,8 @@ footer a, footer p { color: #fff; }
 #start .tile select { background-color: #ffffff; color: #0a1524; border-color: #b9c3d2; }
 #start .tile .button:not(.quiet) { background: #12397a; border-color: #12397a; color: #ffffff; }
 footer { background: #081833; border-top: 1px solid rgba(255,255,255,.14); }
-/* ===== Shape 01: Large radius, pill buttons (as now) ===== */
+/* ===== Shape 02: Medium radius, rounded-rectangle buttons ===== */
+:root { --radius-card: 1rem; --radius-inner: .75rem; --radius-field: .625rem; --radius-pill: .625rem; }
+header a { border-radius: var(--radius-field); }
+
+/* ===== Cards 01: Tiles of different width 7/5/5/7 (as now) ===== */
