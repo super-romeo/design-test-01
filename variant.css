@@ -192,3 +192,5 @@ footer a, footer p { color: #0a1524; }
 }
 /* ===== Motion 04: Load cascade only, no reveal on scroll, static dot ===== */
 .reveal, .dot, .skel { animation: none !important; }
+
+/* ===== Commands 01: Sample as is ===== */
