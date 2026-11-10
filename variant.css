@@ -169,4 +169,9 @@ header a { border-radius: var(--radius-field); }
   background: radial-gradient(circle at 16px 15px, #b9c3d2 4px, transparent 5px), radial-gradient(circle at 32px 15px, #b9c3d2 4px, transparent 5px),
     radial-gradient(circle at 48px 15px, #b9c3d2 4px, transparent 5px), #e9edf3; }
 .window .shot { border: 0; border-radius: 0; box-shadow: none; }
-/* ===== Density 01: Spacious, calm headline (as now) ===== */
+/* ===== Density 02: Compact: smaller gaps between blocks ===== */
+@media (min-width: 768px) {
+:root { --section: 4rem; --gap: clamp(1.5rem, 3.5vw, 3.5rem); --pad-card: 1.75rem; }
+}
+
+/* ===== Header 01: Sticky light header, plain links, dark footer (as now) ===== */
