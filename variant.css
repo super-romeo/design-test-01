@@ -152,4 +152,14 @@ footer { background: #081833; border-top: 1px solid rgba(255,255,255,.14); }
 :root { --radius-card: 1rem; --radius-inner: .75rem; --radius-field: .625rem; --radius-pill: .625rem; }
 header a { border-radius: var(--radius-field); }
 
-/* ===== Cards 01: Tiles of different width 7/5/5/7 (as now) ===== */
+/* ===== Cards 05: Grid 2x2, picture on the side ===== */
+.art { height: auto; aspect-ratio: 4 / 3; }
+@media (min-width: 768px) {
+.bento > *, .bento > .wide { grid-column: span 6; }
+#wat .tile { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); column-gap: 1.5rem; align-items: center; }
+#wat .tile .art { grid-row: 1 / span 3; }
+#wat .tile > :not(.art) { grid-column: 2; }
+#wat .tile { padding: 1.5rem; }
+}
+
+/* ===== Hero 01: Text left, picture right, facts strip below (as now) ===== */
