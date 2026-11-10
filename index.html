@@ -42,7 +42,6 @@ header{background:rgba(252,252,252,.94);border-bottom:1px solid var(--asphalt-li
 header .wrap{min-height:68px}
 .logo{font-family:var(--display);font-size:19px;font-weight:800;letter-spacing:-.01em;font-stretch:85%}
 .logo a{color:var(--on-dark);display:inline-flex;align-items:center;gap:10px;min-height:44px}
-.logo a::before{content:"";width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--amber) 0 50%,var(--amber-soft) 50% 100%);box-shadow:0 0 0 2px var(--asphalt-2) inset}
 nav.top{display:flex;gap:6px}
 nav.top a{color:var(--on-dark-muted);margin:0;font-size:15px;font-weight:500;padding:10px 12px;position:relative;text-decoration:none}
 nav.top a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
@@ -72,6 +71,12 @@ a.cta:active{transform:translateY(0) scale(.98)}
 .facts{list-style:none;padding:0;margin:30px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--on-dark)}
 .facts li{display:flex;align-items:center;gap:8px}
 .facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.facts li b{font-weight:600;color:var(--on-dark-muted)}
+.hero-pic{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;align-self:center;border-radius:var(--r-l);box-shadow:0 0 0 1.5px var(--line),0 40px 80px -30px rgba(0,0,0,.25);animation:rise .9s .1s var(--ease) both}
+.card-pic{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;margin-bottom:10px}
+.ex-pic{display:block;width:min(100%,720px);height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r-l);border:1px solid var(--line);margin:0 0 40px}
+.driver-line b{display:block;margin-bottom:6px}
+footer .logo{margin:0 0 4px;color:var(--ink)}
 .hero .cta-note{color:var(--on-dark-muted);font-size:14px;margin:18px 0 0}
 
 /* road behind the phone */
@@ -223,7 +228,7 @@ footer .muted{color:var(--muted);max-width:80ch}
   a.cta{display:flex;justify-content:center;width:100%;text-align:center;margin:0}
   #what .grid,.week{grid-template-columns:1fr}
   #what .card{min-height:0;padding:26px 24px 16px}
-  .hero-visual{min-height:0;padding-bottom:116px}
+  .hero-visual{min-height:0;padding-bottom:0}
   .phone{width:288px;height:584px}
   .float{left:0;bottom:0;width:220px}
   .sign{display:none}
@@ -248,50 +253,22 @@ footer .muted{color:var(--muted);max-width:80ch}
   <div class="wrap">
     <div class="hero">
       <div class="hero-text">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit <span class="muted">Sed do eiusmod tempor incididunt</span></h1>
+        <p class="tag">Lorem ipsum dolor</p>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
         <p class="sub">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
         <a class="cta" href="#">Lorem ipsum</a>
         <ul class="facts">
-          <li>Ipsum dolor sit amet</li>
-          <li>Consectetur adipiscing</li>
-          <li>Sed do eiusmod</li>
+          <li><b>Lorem</b> <span>Ipsum dolor sit amet</span></li>
+          <li><b>Dolor</b> <span>Consectetur adipiscing</span></li>
+          <li><b>Amet</b> <span>Sed do eiusmod</span></li>
+          <li><b>Elit</b> <span>Tempor incididunt</span></li>
         </ul>
         <p class="cta-note">Excepteur sint occaecat · Cupidatat non proident sunt in culpa</p>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual">
         <div class="road"></div>
-        <svg class="sign" viewBox="0 0 84 84" focusable="false">
-          <rect x="10" y="10" width="64" height="64" rx="6" transform="rotate(45 42 42)" fill="#d6efff" stroke="#006acf" stroke-width="3"/>
-          <rect x="14.5" y="14.5" width="55" height="55" rx="4" transform="rotate(45 42 42)" fill="none" stroke="#006acf" stroke-width="2"/>
-          <path d="M24 33h22v14H24zM46 38h8l5 5v4H46z" fill="#006acf"/>
-          <circle cx="30" cy="50" r="3.5" fill="#006acf"/><circle cx="52" cy="50" r="3.5" fill="#006acf"/>
-        </svg>
-        <div class="phone">
-          <div class="screen">
-            <div class="app-top">Lorem ipsum <small>Dolor 3 / 8</small></div>
-            <div class="meter"><i></i></div>
-            <div class="bubble b-officer">
-              <span class="who">Lorem</span>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation?</p>
-              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>Ipsum dolor</b></div>
-            </div>
-            <div class="bubble b-driver">
-              <span class="who">Sit amet</span>
-              <p><span class="w-ok">Duis aute irure dolor in.</span> <span class="w-miss">Velit</span> <span class="w-ok">esse cillum, dolore.</span></p>
-            </div>
-            <div class="model">
-              <span class="who">Dolor sit amet</span>
-              <p>Duis aute irure dolor in reprehenderit. Velit esse cillum dolore eu fugiat nulla.</p>
-            </div>
-            <div class="mic"><div class="mic-dot"></div><span><b>Lorem ipsum</b>Dolor sit amet consectetur</span></div>
-          </div>
-        </div>
-        <div class="float">
-          <span class="who">Lorem ipsum · dolor</span>
-          <p>“Quis nostrud exercitation ullamco?”</p>
-          <small>Sed do eiusmod tempor incididunt ut</small>
-        </div>
+        <img class="hero-pic" src="pic-hero.svg" alt="Image 1" width="1200" height="800">
       </div>
     </div>
   </div>
@@ -304,10 +281,10 @@ footer .muted{color:var(--muted);max-width:80ch}
       <p>Consectetur adipiscing elit sed do</p>
     </div>
     <div class="grid">
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><b>Lorem ipsum</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><br><a class="btn" href="#">Lorem ipsum</a></div>
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="13" height="18" rx="2"/><path d="M8 8h5M8 12h5M8 16h3"/><path d="M20 7v12"/></svg></div><b>Dolor sit amet</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><br><a class="btn" href="#">Lorem ipsum</a></div>
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 10-10 10L2 12z"/><path d="M12 7v6M12 16.5v.5"/></svg></div><b>Consectetur elit</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><br><a class="btn" href="#">Lorem ipsum</a></div>
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div><b>Sed do eiusmod</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><br><a class="btn" href="#">Lorem ipsum</a></div>
+      <div class="card"><img class="card-pic" src="pic-card-1.svg" alt="Image 2" width="600" height="400" loading="lazy"><b>Lorem ipsum</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
+      <div class="card"><img class="card-pic" src="pic-card-2.svg" alt="Image 3" width="600" height="400" loading="lazy"><b>Dolor sit amet</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
+      <div class="card"><img class="card-pic" src="pic-card-3.svg" alt="Image 4" width="600" height="400" loading="lazy"><b>Consectetur elit</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
+      <div class="card"><img class="card-pic" src="pic-card-4.svg" alt="Image 5" width="600" height="400" loading="lazy"><b>Sed do eiusmod</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
     </div>
   </div>
 </section>
@@ -315,13 +292,9 @@ footer .muted{color:var(--muted);max-width:80ch}
 <section id="example">
   <div class="wrap">
     <h2>Consectetur adipiscing</h2>
-    <p class="driver-line"><b>Lorem ipsum dolor.</b> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <ol class="week">
-      <li><span class="day"><small>Dies</small>1</span><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><span class="res good">Lorem</span></li>
-      <li><span class="day"><small>Dies</small>2</span><p>Duis aute irure dolor in reprehenderit.</p><span class="res miss">Ipsum dolor sit amet</span></li>
-      <li><span class="day"><small>Dies</small>5</span><p>Excepteur sint occaecat cupidatat non proident.</p><span class="res own">Consectetur elit</span></li>
-    </ol>
-    <a class="cta" href="#">Lorem ipsum</a>
+    <p class="driver-line"><b>Lorem ipsum dolor</b> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img class="ex-pic" src="pic-example.svg" alt="Image 6" width="1200" height="800" loading="lazy">
+    <a class="cta" href="#">Dolor sit amet</a>
   </div>
 </section>
 <section id="opis">
@@ -329,13 +302,6 @@ footer .muted{color:var(--muted);max-width:80ch}
     <div class="cols">
       <div class="aside">
         <h2>Sed ut perspiciatis unde</h2>
-        <ol class="route" aria-label="Lorem ipsum">
-          <li>Lorem<small>ipsum dolor sit amet consectetur</small></li>
-          <li>Ipsum dolor<small>sed do eiusmod, tempor, incididunt</small></li>
-          <li>Sit amet<small>ut enim ad minim veniam</small></li>
-          <li>Consectetur elit<small>quis nostrud, ullamco</small></li>
-          <li>Sed do eiusmod<small>laboris nisi ut</small></li>
-        </ol>
       </div>
       <div class="body">
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
@@ -377,7 +343,6 @@ footer .muted{color:var(--muted);max-width:80ch}
       <div class="form-col">
         <label>Lorem ipsum dolor<select><option value="">— lorem —</option><option>Ipsum I</option><option>Ipsum II</option><option>Ipsum III</option><option>Ipsum IV</option></select></label>
         <a class="cta" href="#">Incipe</a>
-        <p class="cta-note">Excepteur sint occaecat · Cupidatat non proident sunt in culpa</p>
       </div>
     </div>
   </div>
@@ -385,6 +350,7 @@ footer .muted{color:var(--muted);max-width:80ch}
 </main>
 
 <footer><div class="wrap">
+  <p class="logo">Lorem Ipsum</p>
   <p><a href="#">Privacy</a></p>
   <p class="muted">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
 </div></footer>
