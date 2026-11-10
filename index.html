@@ -4,355 +4,121 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="canonical" href="https://01.design-test.dokuline.com/">
-<title>Layout 01 — design test</title>
-<meta name="description" content="Design test 01">
+<title>Font 01 — Inter — design test</title>
+<meta name="description" content="Design test 17">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<style>
-/* Variant "Taste Skill — hero A": kind software (voice-drill app), asymmetric split hero,
-   house palette on light grounds (brief 4), Inter for everything. Token names kept from the first palette. */
-:root{
-  --asphalt:#f7f8f9; --asphalt-2:#ffffff; --asphalt-line:#dfe1e5;
-  --paper:#fcfcfc; --paper-2:#f7f8f9; --card:#ffffff;
-  --ink:#05080b; --muted:#5c646f; --line:#dfe1e5;
-  --amber:#006acf; --amber-ink:#006acf; --amber-soft:#d6efff; --deco:#b1ddff; --focus:#0086dd; --on-accent:#ffffff;
-  --on-dark:#05080b; --on-dark-muted:#5c646f;
-  --ok:#1a7f37; --miss:#cf222e; --warn:#9a6700; --ok-soft:#dafbe1; --miss-soft:#ffebe9;
-  --r-s:10px; --r-m:16px; --r-l:24px;
-  --display:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --text:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --ease:cubic-bezier(.2,.7,.2,1);
-}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--text)}
-.wrap{max-width:1200px;padding:0 32px}
-a{color:var(--amber-ink)}
-h1,h2,h3{font-family:var(--display);color:inherit;font-stretch:88%}
-h2{font-size:clamp(32px,4vw,48px);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin:0 0 20px;max-width:16ch;text-wrap:balance}
-h3{font-size:19px;line-height:1.3;font-weight:700;letter-spacing:-.01em;margin:0 0 6px}
-p{margin:0 0 16px}
-:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
-
-/* header */
-header{background:rgba(252,252,252,.94);border-bottom:1px solid var(--asphalt-line);backdrop-filter:blur(10px)}
-header .wrap{min-height:68px}
-.logo{font-family:var(--display);font-size:19px;font-weight:800;letter-spacing:-.01em;font-stretch:85%}
-.logo a{color:var(--on-dark);display:inline-flex;align-items:center;gap:10px;min-height:44px}
-nav.top{display:flex;gap:6px}
-nav.top a{color:var(--on-dark-muted);margin:0;font-size:15px;font-weight:500;padding:10px 12px;position:relative;text-decoration:none}
-nav.top a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
-nav.top a:hover{color:var(--on-dark)}
-nav.top a:hover::after{transform:scaleX(1)}
-
-/* buttons: one style, step on hover, press on click */
-a.cta{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--on-accent);font:700 17px/1 var(--text);padding:18px 28px;border-radius:999px;margin:0;box-shadow:0 1px 0 rgba(0,0,0,.3),0 6px 16px -8px rgba(0,0,0,.45);transition:transform .18s var(--ease),box-shadow .18s var(--ease),background-color .18s}
-a.cta::after{content:"";width:8px;height:8px;border-top:2.5px solid currentColor;border-right:2.5px solid currentColor;transform:rotate(45deg);transition:transform .18s var(--ease)}
-a.cta:hover{opacity:1;background:var(--amber);transform:translateY(-2px);box-shadow:0 2px 0 rgba(0,0,0,.3),0 12px 24px -12px rgba(0,0,0,.5)}
-a.cta:hover::after{transform:translateX(3px) rotate(45deg)}
-a.cta:active{transform:translateY(0) scale(.98)}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin:auto 0 0;padding:10px 0;border:0;background:none;border-radius:0;color:var(--ink);font:700 15px/1 var(--text);text-decoration:none}
-.btn::after{content:"";width:7px;height:7px;border-top:2px solid var(--amber-ink);border-right:2px solid var(--amber-ink);transform:rotate(45deg);transition:transform .18s var(--ease)}
-.btn:hover{background:none;color:var(--amber-ink)}
-.btn:hover::after{transform:translateX(4px) rotate(45deg)}
-
-/* hero: asymmetric split, text span-5, device span-6 start-7 */
-.hero-band{background:var(--asphalt);color:var(--on-dark);position:relative;overflow:hidden;isolation:isolate}
-.hero-band::before{content:"";position:absolute;inset:0;z-index:-1;background:none}
-.hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start;padding:64px 0 80px;min-height:min(820px,calc(100svh - 68px))}
-.hero-text{grid-column:1 / span 5;padding-top:12px}
-.hero-visual{grid-column:7 / span 6;position:relative;display:flex;justify-content:center;min-height:620px}
-.hero h1{font-family:var(--display);font-size:clamp(40px,4.6vw,60px);line-height:.98;font-weight:800;letter-spacing:-.025em;font-stretch:80%;margin:0 0 24px;color:var(--on-dark);text-wrap:balance}
-.hero h1 .muted{display:block;color:var(--on-dark-muted);font-weight:600;font-size:.46em;line-height:1.15;letter-spacing:-.01em;margin-top:14px;font-stretch:88%}
-.hero .sub{font-size:18.5px;line-height:1.55;color:var(--on-dark-muted);margin:0 0 30px;max-width:46ch}
-.facts{list-style:none;padding:0;margin:30px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--on-dark)}
-.facts li{display:flex;align-items:center;gap:8px}
-.facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber)}
-.facts li b{font-weight:600;color:var(--on-dark-muted)}
-.hero-pic{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;align-self:center;border-radius:var(--r-l);box-shadow:0 0 0 1.5px var(--line),0 40px 80px -30px rgba(0,0,0,.25);animation:rise .9s .1s var(--ease) both}
-.card-pic{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;margin-bottom:10px}
-.ex-pic{display:block;width:min(100%,720px);height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r-l);border:1px solid var(--line);margin:0 0 40px}
-.driver-line b{display:block;margin-bottom:6px}
-footer .logo{margin:0 0 4px;color:var(--ink)}
-.hero .cta-note{color:var(--on-dark-muted);font-size:14px;margin:18px 0 0}
-
-/* road behind the phone */
-.road{position:absolute;inset:-40px -10% -120px;z-index:-1;opacity:.55;
-  background:linear-gradient(90deg,transparent calc(50% - 2px),var(--deco) calc(50% - 2px) calc(50% + 2px),transparent calc(50% + 2px)) center/100% 64px repeat-y;
-  -webkit-mask:linear-gradient(180deg,transparent,#05080b 25%,#05080b 70%,transparent);mask:linear-gradient(180deg,transparent,#05080b 25%,#05080b 70%,transparent);
-  transform:perspective(600px) rotateX(52deg);transform-origin:50% 100%}
-
-/* phone */
-.phone{width:316px;height:640px;border-radius:48px;background:var(--paper-2);padding:12px;position:relative;
-  box-shadow:0 0 0 1.5px var(--line),0 40px 80px -30px rgba(0,0,0,.25)}
-.phone::before{content:"";position:absolute;top:22px;left:50%;width:92px;height:26px;border-radius:20px;background:var(--line);transform:translateX(-50%);z-index:2}
-.screen{height:100%;border-radius:37px;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink);overflow:hidden;display:flex;flex-direction:column;padding:58px 16px 18px;gap:12px;font-size:14px;line-height:1.4}
-.app-top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:13px}
-.app-top small{font-weight:600;color:var(--muted);font-size:12px}
-.meter{height:5px;border-radius:5px;background:var(--paper-2);overflow:hidden}
-.meter i{display:block;height:100%;width:38%;background:var(--amber);border-radius:5px}
-.who{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.bubble{border-radius:18px;padding:12px 14px;max-width:88%}
-.b-officer{background:var(--asphalt);color:var(--on-dark);border:1px solid var(--line);border-bottom-left-radius:6px}
-.b-officer .who{color:var(--amber)}
-.b-officer p{margin:0 0 10px;font-weight:600;font-size:15px}
-.wave{display:flex;align-items:center;gap:3px;height:20px}
-.wave i{width:3px;border-radius:2px;background:var(--on-dark-muted);height:40%}
-.wave i:nth-child(3n){height:85%}.wave i:nth-child(4n+1){height:60%}.wave i:nth-child(5n){height:100%}
-.wave i:nth-child(-n+9){background:var(--amber)}
-.wave b{margin-left:auto;white-space:nowrap;font-size:11px;font-weight:600;color:var(--on-dark-muted)}
-.b-driver{align-self:flex-end;background:var(--card);border:1.5px solid var(--deco);border-bottom-right-radius:6px}
-.b-driver p{margin:0;font-size:15px;font-weight:500}
-.w-ok{color:var(--ok);font-weight:700}
-.w-miss{color:var(--miss);font-weight:700;text-decoration:underline wavy;text-underline-offset:3px}
-.model{border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:var(--card)}
-.model p{margin:0;font-size:13.5px;color:var(--ink)}
-.mic{margin-top:auto;display:flex;align-items:center;gap:12px}
-.mic-dot{width:56px;height:56px;border-radius:50%;background:var(--amber);display:grid;place-items:center;flex:none;position:relative}
-.mic-dot::before{content:"";width:14px;height:22px;border-radius:8px;background:var(--on-accent)}
-.mic-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--amber);opacity:.4}
-.mic span{font-size:13px;font-weight:600;color:var(--muted)}
-.mic span b{display:block;color:var(--ink);font-size:14px}
-
-/* float card, lower left of the device */
-.float{position:absolute;left:0;bottom:112px;width:236px;background:var(--card);color:var(--ink);border-radius:var(--r-m);padding:14px 16px;box-shadow:0 24px 50px -20px rgba(0,0,0,.25);border:1px solid var(--line)}
-.float .who{color:var(--amber-ink)}
-.float p{margin:0;font-weight:700;font-size:15px;line-height:1.35}
-.float small{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
-.sign{position:absolute;right:2%;top:24px;width:84px;height:84px}
-
-/* entrance (once, on load) */
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
-.hero-text>*{animation:rise .7s var(--ease) both}
-.hero-text>:nth-child(2){animation-delay:.06s}.hero-text>:nth-child(3){animation-delay:.12s}
-.hero-text>:nth-child(4){animation-delay:.18s}.hero-text>:nth-child(5){animation-delay:.24s}.hero-text>:nth-child(6){animation-delay:.3s}
-.phone{animation:rise .9s .1s var(--ease) both}
-.b-officer{animation:pop .5s .7s var(--ease) both}
-.b-driver{animation:pop .5s 1.5s var(--ease) both}
-.model{animation:pop .5s 2.2s var(--ease) both}
-.float{animation:pop .6s 2.8s var(--ease) both}
-
-/* sections */
-main>section{padding:112px 0}
-.sec-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:48px;align-items:end}
-.sec-head h2{grid-column:1 / span 6;margin:0}
-.sec-head p{grid-column:7 / span 6;margin:0;color:var(--muted);font-size:18px;max-width:46ch}
-.tag{display:inline-block;font:700 12px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink);margin:0 0 16px}
-
-/* features */
-#what .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-#what .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:32px 32px 22px;gap:10px;min-height:250px;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
-#what .card:hover{transform:translateY(-2px);box-shadow:0 18px 40px -24px rgba(0,0,0,.18);border-color:var(--deco)}
-#what .card>b{font-family:var(--display);font-size:24px;line-height:1.15;font-weight:800;font-stretch:88%;letter-spacing:-.015em;margin:0}
-#what .card span{font-size:16.5px;line-height:1.55;color:var(--muted)}
-#what .card br{display:none}
-.ico{width:44px;height:44px;border-radius:12px;background:var(--amber-soft);display:grid;place-items:center;margin-bottom:10px}
-.ico svg{width:24px;height:24px}
-
-/* example: one driver's week */
-#example{background:var(--paper-2)}
-.week{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:d}
-.week li{background:var(--card);border-radius:var(--r-l);padding:28px;border:1px solid var(--line);position:relative}
-.week .day{font-family:var(--display);font-size:56px;line-height:1;font-weight:800;font-stretch:78%;color:var(--amber);display:block;margin-bottom:14px;letter-spacing:-.02em}
-.week .day small{font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px;vertical-align:middle}
-.week p{margin:0;font-size:16.5px;color:var(--ink)}
-.week .res{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
-.res.good{background:var(--ok-soft);color:var(--ok)}.res.miss{background:var(--miss-soft);color:var(--miss)}.res.own{background:var(--amber-soft);color:var(--ink)}
-.driver-line{font-size:18px;color:var(--muted);margin:0 0 28px}
-.driver-line b{color:var(--ink)}
-
-/* how it works: route of the inspection + text */
-#opis .cols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
-#opis .aside{grid-column:1 / span 4;position:sticky;top:110px;align-self:start}
-#opis .body{grid-column:6 / span 7}
-#opis .body p{font-size:18px;line-height:1.7;color:var(--ink);margin:0 0 22px;max-width:62ch}
-#opis .body p:first-child{font-size:21px;line-height:1.55;color:var(--ink)}
-.route{list-style:none;margin:28px 0 0;padding:0 0 0 28px;position:relative}
-.route::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--amber)}
-.route li{position:relative;padding:0 0 18px;font-weight:600;font-size:16px}
-.route li::before{content:"";position:absolute;left:-26px;top:4px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--amber)}
-.route li small{display:block;font-weight:400;color:var(--muted);font-size:14.5px}
-
-/* questions */
-#faq{background:var(--card);border-top:1px solid var(--line)}
-#faq .cols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
-#faq h2{grid-column:1 / span 4}
-#faq .qa{grid-column:6 / span 7}
-#faq .qa div{border-top:1px solid var(--line);padding:22px 0 8px}
-#faq .qa div:last-child{border-bottom:1px solid var(--line)}
-#faq h3{font-size:20px;margin:0 0 8px}
-#faq .qa p{color:var(--muted);margin:0 0 14px}
-
-/* start */
-#start{background:var(--asphalt);color:var(--on-dark)}
-#start .cols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
-#start .lead-col{grid-column:1 / span 6}
-#start .form-col{grid-column:8 / span 5;background:var(--asphalt-2);border:1px solid var(--asphalt-line);border-radius:var(--r-l);padding:32px}
-#start h2{color:var(--on-dark)}
-#start .tag{color:var(--amber)}
-#start .lead-col p{color:var(--on-dark-muted);font-size:18px;max-width:42ch;margin:0}
-#start label{display:block;font-weight:600;font-size:15px;color:var(--on-dark);margin:0 0 22px}
-#start select{display:block;width:100%;min-width:0;margin-top:10px;padding:14px 16px;font-size:16px;border-radius:var(--r-s);border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:52px}
-#start select:focus{outline:3px solid var(--focus);outline-offset:2px}
-#start a.cta{width:100%;justify-content:center}
-#start .cta-note{color:var(--on-dark-muted);font-size:14px;margin:16px 0 0}
-
-/* footer */
-footer{background:var(--paper-2);border-top:1px solid var(--line);padding:36px 0;font-size:14px}
-footer a{color:var(--on-dark);display:inline-block;padding:10px 0}
-footer p{margin:0}
-footer .muted{color:var(--muted);max-width:80ch}
-
-@media (max-width:1024px){
-  .hero{grid-template-columns:1fr;row-gap:56px;min-height:0;padding:64px 0 80px}
-  .hero-text,.hero-visual{grid-column:1 / -1}
-  .hero-text{max-width:640px}
-  .sec-head h2,.sec-head p{grid-column:1 / -1}
-  .sec-head p{margin-top:14px}
-  #opis .aside,#opis .body,#faq h2,#faq .qa,#start .lead-col,#start .form-col{grid-column:1 / -1}
-  #opis .aside{position:static;margin-bottom:36px}
-  #start .form-col{margin-top:32px}
-}
-@media (max-width:760px){
-  .wrap{padding:0 16px}
-  header .wrap{min-height:60px}
-  nav.top{display:none}
-  main>section{padding:72px 0}
-  .hero{padding:44px 0 64px;row-gap:40px}
-  .hero h1{font-size:42px}
-  .hero .sub{font-size:17.5px}
-  a.cta{display:flex;justify-content:center;width:100%;text-align:center;margin:0}
-  #what .grid,.week{grid-template-columns:1fr}
-  #what .card{min-height:0;padding:26px 24px 16px}
-  .hero-visual{min-height:0;padding-bottom:0}
-  .phone{width:288px;height:584px}
-  .float{left:0;bottom:0;width:220px}
-  .sign{display:none}
-  .week .day{font-size:44px}
-  h2{font-size:34px}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="variant.css">
 </head>
 <body>
-<div style="position:relative;z-index:9999;display:flex;gap:16px;justify-content:center;align-items:center;padding:6px 12px;background:#05080b;color:#fff;font:600 13px/1.4 Inter,system-ui,sans-serif"><a href="https://21.design-test.dokuline.com/" style="color:#b1ddff;text-decoration:none">← 21</a><span>Layout 01 / 21</span><a href="https://02.design-test.dokuline.com/" style="color:#b1ddff;text-decoration:none">02 →</a></div>
+<div style="position:relative;z-index:9999;display:flex;gap:16px;justify-content:center;align-items:center;padding:6px 12px;background:#05080b;color:#fff;font:600 13px/1.4 system-ui,sans-serif"><a href="https://08.design-test.dokuline.com/" style="color:#b1ddff;text-decoration:none">← 08</a><span>Font 01 / 8: Inter</span><a href="https://02.design-test.dokuline.com/" style="color:#b1ddff;text-decoration:none">02 →</a></div>
 
-<header><div class="wrap">
-  <div class="logo"><a href="#">Lorem Ipsum</a></div>
-  <nav class="top"><a href="#what">Dolor sit</a><a href="#">Amet</a><a href="#example">Consectetur</a><a href="#start">Incipe</a></nav>
+<header><div class="shell">
+  <a class="home" href="index.html">Lorem Ipsum</a>
+  <nav aria-label="Lorem ipsum"><a href="#wat">Dolor sit</a><a href="#">Amet</a><a href="#voorbeeld">Consectetur</a><a href="#start">Incipe</a></nav>
 </div></header>
 
-<main>
-<div class="hero-band">
-  <div class="wrap">
-    <div class="hero">
-      <div class="hero-text">
-        <p class="tag">Lorem ipsum dolor</p>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-        <p class="sub">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-        <a class="cta" href="#">Lorem ipsum</a>
-        <ul class="facts">
-          <li><b>Lorem</b> <span>Ipsum dolor sit amet</span></li>
-          <li><b>Dolor</b> <span>Consectetur adipiscing</span></li>
-          <li><b>Amet</b> <span>Sed do eiusmod</span></li>
-          <li><b>Elit</b> <span>Tempor incididunt</span></li>
-        </ul>
-        <p class="cta-note">Excepteur sint occaecat · Cupidatat non proident sunt in culpa</p>
-      </div>
-
-      <div class="hero-visual">
-        <div class="road"></div>
-        <img class="hero-pic" src="pic-hero.svg" alt="Image 1" width="1200" height="800">
-      </div>
+<main class="shell">
+  <section class="split">
+    <div class="stack">
+      <p class="meta rise"><span class="dot"></span> Lorem ipsum dolor</p>
+      <h1 class="rise" style="--i:1">Lorem ipsum dolor sit amet, consectetur <span class="soft">adipiscing elit</span></h1>
+      <p class="rise" style="--i:2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+      <a class="button rise" style="--i:3" href="#">Lorem ipsum</a>
+      <p class="meta rise" style="--i:4">Excepteur sint occaecat · Cupidatat non proident sunt in culpa</p>
     </div>
-  </div>
-</div>
 
-<section id="what">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Dolor sit amet</h2>
+    <img class="shot rise" style="--i:2" src="pic-hero.svg" alt="Image 1" width="1200" height="800">
+    <dl class="facts">
+      <div><dt>Lorem</dt><dd>Ipsum dolor sit amet</dd></div>
+      <div><dt>Dolor</dt><dd>Consectetur adipiscing</dd></div>
+      <div><dt>Amet</dt><dd>Sed do eiusmod</dd></div>
+      <div><dt>Elit</dt><dd>Tempor incididunt</dd></div>
+    </dl>
+  </section>
+
+  <section id="wat">
+    <div class="split">
+      <div class="stack"><h2>Dolor sit amet</h2></div>
       <p>Consectetur adipiscing elit sed do</p>
     </div>
-    <div class="grid">
-      <div class="card"><img class="card-pic" src="pic-card-1.svg" alt="Image 2" width="600" height="400" loading="lazy"><b>Lorem ipsum</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
-      <div class="card"><img class="card-pic" src="pic-card-2.svg" alt="Image 3" width="600" height="400" loading="lazy"><b>Dolor sit amet</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
-      <div class="card"><img class="card-pic" src="pic-card-3.svg" alt="Image 4" width="600" height="400" loading="lazy"><b>Consectetur elit</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
-      <div class="card"><img class="card-pic" src="pic-card-4.svg" alt="Image 5" width="600" height="400" loading="lazy"><b>Sed do eiusmod</b><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span><a class="btn" href="#">Lorem ipsum</a></div>
+    <div class="bento">
+      <article class="tile stack wide reveal">
+        <div class="art"><img src="pic-card-1.svg" alt="Image 2" width="800" height="600"></div>
+        <h3>Lorem ipsum</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <a class="button quiet" href="#">Lorem ipsum</a>
+      </article>
+      <article class="tile stack reveal">
+        <div class="art"><img src="pic-card-2.svg" alt="Image 3" width="800" height="600"></div>
+        <h3>Dolor sit amet</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <a class="button quiet" href="#">Lorem ipsum</a>
+      </article>
+      <article class="tile stack reveal">
+        <div class="art"><img src="pic-card-3.svg" alt="Image 4" width="800" height="600"></div>
+        <h3>Consectetur elit</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <a class="button quiet" href="#">Lorem ipsum</a>
+      </article>
+      <article class="tile stack wide reveal">
+        <div class="art"><img src="pic-card-4.svg" alt="Image 5" width="800" height="600"></div>
+        <h3>Sed do eiusmod</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <a class="button quiet" href="#">Lorem ipsum</a>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="example">
-  <div class="wrap">
-    <h2>Consectetur adipiscing</h2>
-    <p class="driver-line"><b>Lorem ipsum dolor</b> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <img class="ex-pic" src="pic-example.svg" alt="Image 6" width="1200" height="800" loading="lazy">
-    <a class="cta" href="#">Dolor sit amet</a>
-  </div>
-</section>
-<section id="opis">
-  <div class="wrap">
-    <div class="cols">
-      <div class="aside">
-        <h2>Sed ut perspiciatis unde</h2>
-      </div>
-      <div class="body">
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      </div>
+  <section id="voorbeeld" class="split flip">
+    <div class="stack">
+      <p class="meta">Lorem ipsum dolor</p>
+      <h2>Consectetur adipiscing</h2>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <a class="button" href="#">Dolor sit amet</a>
     </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="wrap">
-    <div class="cols">
-      <h2>Quis autem vel eum</h2>
-      <div class="qa">
-        <div><h3>Neque porro quisquam est qui dolorem?</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
-        <div><h3>Neque porro quisquam est qui dolorem?</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
-        <div><h3>Neque porro quisquam est qui dolorem?</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
-        <div><h3>Neque porro quisquam est qui dolorem?</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
-        <div><h3>Neque porro quisquam est qui dolorem?</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
-      </div>
+    <img class="shot reveal" src="pic-example.svg" alt="Image 6" width="1200" height="800">
+  </section>
+<!-- seo-tekst:start -->
+  <section id="opis" class="split flip">
+    <div class="stack"><h2>Sed ut perspiciatis unde</h2></div>
+    <div class="stack">
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
-  </div>
-</section>
-<section id="start">
-  <div class="wrap">
-    <div class="cols">
-      <div class="lead-col">
-        <h2>At vero eos et accusamus</h2>
-        <p>Et iusto odio dignissimos ducimus qui blanditiis.</p>
-      </div>
-      <div class="form-col">
-        <label>Lorem ipsum dolor<select><option value="">— lorem —</option><option>Ipsum I</option><option>Ipsum II</option><option>Ipsum III</option><option>Ipsum IV</option></select></label>
-        <a class="cta" href="#">Incipe</a>
-      </div>
+  </section>
+  <section id="faq">
+    <div class="stack"><h2>Quis autem vel eum</h2></div>
+    <div class="rows">
+      <div class="split flip"><h3>Neque porro quisquam est qui dolorem?</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
+      <div class="split flip"><h3>Neque porro quisquam est qui dolorem?</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
+      <div class="split flip"><h3>Neque porro quisquam est qui dolorem?</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
+      <div class="split flip"><h3>Neque porro quisquam est qui dolorem?</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
+      <div class="split flip"><h3>Neque porro quisquam est qui dolorem?</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p></div>
     </div>
-  </div>
-</section>
+  </section>
+<!-- seo-tekst:end -->
+  <section id="start" class="split">
+    <div class="stack">
+      
+      <h2>At vero eos et accusamus</h2>
+      <p>Et iusto odio dignissimos ducimus qui blanditiis.</p>
+    </div>
+    <div class="tile stack">
+      <label>Lorem ipsum dolor<select><option value="">— lorem —</option><option>Ipsum I</option><option>Ipsum II</option><option>Ipsum III</option><option>Ipsum IV</option></select></label>
+      <a class="button" href="#">Incipe</a>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <p class="logo">Lorem Ipsum</p>
+<footer><div class="shell">
+  <p><b>Lorem Ipsum</b></p>
   <p><a href="#">Privacy</a></p>
-  <p class="muted">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+  <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
 </div></footer>
 
 </body>
