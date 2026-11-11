@@ -70,6 +70,10 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-tex
 body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 var(--text-body)/var(--leading-body) var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; font-synthesis: none; }
 h1, h2, h3 { margin: 0; color: var(--ink); font-weight: 600; letter-spacing: var(--tracking); line-height: var(--leading-tight); text-wrap: balance; }
 h1 { font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
+/* long headlines (German, Polish, Russian…): the page sets data-len on h1 — long: over 70 characters, xlong: over 100 */
+h1[data-len="long"] { --text-display: clamp(2.125rem, 4vw, 3.125rem); }
+h1[data-len="xlong"] { --text-display: clamp(2rem, 3.6vw, 2.875rem); }
+h3, dd { hyphens: auto; }   /* long words in narrow cards and facts; the headline is not hyphenated */
 h2 { font-size: var(--text-h2); }
 h3 { font-size: var(--text-h3); letter-spacing: var(--tracking-h3); line-height: var(--leading-h3); }
 p { margin: 0; color: var(--steel); max-width: var(--measure); }
@@ -98,9 +102,9 @@ section.split > .stack:first-child { align-self: center; }                 /* th
 .bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 
 /* block backgrounds: grey bands, one dark form band (full-bleed) */
-#wat, #opis { --band: var(--band-grey); }
+main > section:has(> .bento), #opis { --band: var(--band-grey); }   /* cards block by structure: every page has its own id */
 #start { --band: var(--band-dark); --ink: #ffffff; --steel: #c3cee2; --accent-wash: rgba(255, 255, 255, .12); --focus: #9dbcf5; color: var(--ink); }
-#wat, #opis, #start { background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
+main > section:has(> .bento), #opis, #start { background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
 #start .tile { --ink: #0a1524; --steel: #566174; --accent-wash: #dfe8f7; --focus: #2f6fd6; color: var(--ink); border-color: transparent; }
 #start .tile select { border-color: var(--line-strong); }
 
@@ -138,8 +142,8 @@ header a, .button { -webkit-user-select: none; user-select: none; }
 .tile { padding: var(--pad-card); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow); }
 .tile p { line-height: var(--leading-snug); }
 .art { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-inner); background: var(--canvas); }
-.art img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
-.art img, .shot { outline: 1px solid rgba(10, 21, 36, .08); outline-offset: -1px; }   /* hairline so pale pictures do not melt into the card */
+.art img, .art svg { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }   /* picture: image file or inline drawing */
+.art img, .art svg, .shot { outline: 1px solid rgba(10, 21, 36, .08); outline-offset: -1px; }   /* hairline so pale pictures do not melt into the card */
 .shot { display: block; align-self: center; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow); }
 .window { margin: 0; align-self: center; overflow: hidden; background: var(--surface); border: 1px solid #c9d2e0; border-radius: var(--radius-inner); box-shadow: 0 24px 48px -26px rgba(10, 21, 36, .30), 0 2px 6px rgba(10, 21, 36, .06); }
 .window::before { content: ""; display: block; height: 30px; border-bottom: 1px solid #d5dbe6;
@@ -170,7 +174,7 @@ select, label { cursor: pointer; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .button { width: 100%; }
   header .shell { position: relative; min-height: 0; padding-top: 6px; padding-bottom: 4px; row-gap: 0; }
-  header nav { margin-left: -.75rem; }
+  header nav { margin-left: -.75rem; flex: 0 0 100%; }   /* links always on row two, even when short */
   header .home, header nav a:last-child { min-height: 40px; }
   header .home { position: relative; }
   header nav a:last-child { position: absolute; top: 6px; right: max(var(--gutter), env(safe-area-inset-right, 0px)); margin: 0; }
